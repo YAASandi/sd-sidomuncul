@@ -1,0 +1,563 @@
+ <!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDN 1 Sidomuncul- Sekolah Profesional dan Peduli</title>
+    <meta name="description" content="SDN 1 Sidomuncul — sekolah modern dengan pelayanan cepat, fasilitas lengkap." />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      
+      :root {
+        --primary: #0a7e36;
+        --secondary: #084b25;
+        --background: #f0f9f3;
+        --text-dark: #0f172a;
+        --text-muted: #475569;
+        --white: #ffffff;
+        --light-green: #e8f5e9;
+        --radius: 12px;
+      }
+      * {
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        color: var(--text-dark);
+        background-color: var(--background);
+        line-height: 1.6;
+      }
+      a {
+        text-decoration: none;
+        color: var(--primary);
+      }
+      img {
+        max-width: 100%;
+        border-radius: var(--radius);
+        height: auto;
+      }
+      
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* --------------------------
+       Header / Navigasi
+    --------------------------- */
+      header {
+        background: var(--white);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+      .logo-sekolah {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--primary);
+      }
+      .logo-sekolah img {
+        height: 40px;
+        margin-right: 10px;
+      }
+      
+      /* menu navbar */
+      nav {
+        display: flex;
+        align-items: center;
+      }
+      nav a {
+        margin: 0 12px;
+        font-weight: 500;
+        display: inline-block;
+        padding-bottom: 6px;
+        border-bottom: 3px solid transparent;
+        transition: border-color 0.18s, color 0.18s;
+        color: var(--text-dark);
+      }
+      nav a:hover,
+      nav a:focus {
+        border-bottom-color: var(--primary);
+        outline: none;
+      }
+      /* saat diklik/aktif - beri garis bawah */
+      nav a:active,
+      nav a.active {
+        border-bottom-color: var(--primary);
+      }
+      /* tombol contact */
+      .btn {
+        background: var(--primary);
+        color: var(--white);
+        padding: 8px 18px;
+        border-radius: var(--radius);
+        font-weight: 600;
+        border: 1px solid transparent;
+        transition: all 0.3s;
+        display: inline-block;
+      }
+      .btn:hover {
+        background: var(--secondary);
+        transform: translateY(-2px);
+      }
+ 
+      /* --------------------------
+       Hero Section
+    --------------------------- */
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+        margin: 60px auto;
+      }
+      .hero-text h1 {
+        font-size: 36px;
+        color: var(--primary);
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+      .hero-text p {
+        color: var(--text-muted);
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+      .hero-image {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: var(--radius);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      /* --------------------------
+       Section: Layanan
+    --------------------------- */
+      section {
+        padding: 80px 0;
+      }
+      section h2 {
+        text-align: center;
+        color: var(--primary);
+        margin-bottom: 10px;
+        font-size: 32px;
+      }
+      section p.subtitle {
+        text-align: center;
+        color: var(--text-muted);
+        margin-bottom: 40px;
+        font-size: 18px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+      }
+      .service {
+        background: var(--white);
+        padding: 25px;
+        border-radius: var(--radius);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: 0.3s;
+        border-top: 4px solid var(--primary);
+      }
+      .service:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      .service h3 {
+        color: var(--primary);
+        margin-top: 15px;
+      }
+      .service img {
+        height: 180px;
+        object-fit: cover;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      /* --------------------------
+       Section: Testimoni
+    --------------------------- */
+      .testimonials {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+      }
+      .testi {
+        background: var(--white);
+        padding: 25px;
+        border-left: 5px solid var(--primary);
+        border-radius: var(--radius);
+        font-style: italic;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      /* --------------------------
+       Section: Tenaga Pengajar
+    --------------------------- */
+      .teachers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 10px;
+      }
+      .teacher {
+        background: var(--white);
+        padding: 20px;
+        border-radius: var(--radius);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: 0.25s;
+        text-align: center;
+      }
+      .teacher:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      .teacher img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        margin-bottom: 15px;
+      }
+      .field {
+        display: inline-block;
+        font-size: 12px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        margin-bottom: 10px;
+        color: #fff;
+        font-weight: 700;
+      }
+      /* warna / pemisahan per bidang */
+      .teacher-math {
+        border-left: 5px solid #02c775;
+      }
+      .teacher-language {
+        border-left: 5px solid #f59e0b;
+      }
+      .teacher-science {
+        border-left: 5px solid #059669;
+      }
+      .teacher-pe {
+        border-left: 5px solid #ef4444;
+      }
+      .teacher-art {
+        border-left: 5px solid #7c3aed;
+      }
+      .teacher-math .field {
+        background: #0284c7;
+      }
+      .teacher-language .field {
+        background: #f59e0b;
+        color: #111;
+      }
+      .teacher-science .field {
+        background: #059669;
+      }
+      .teacher-pe .field {
+        background: #ef4444;
+      }
+      .teacher-art .field {
+        background: #7c3aed;
+      }
+      /* --------------------------
+       Section: pendaftaran
+    --------------------------- */
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      input,
+      select,
+      textarea {
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: var(--radius);
+        font-size: 15px;
+        width: 100%;
+        font-family: "Poppins", sans-serif;
+      }
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 2px rgba(10, 126, 54, 0.2);
+      }
+
+      /* --------------------------
+       Footer
+    --------------------------- */
+      footer {
+        background: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+        margin-top: 60px;
+      }
+      footer p {
+        margin: 0;
+      }
+
+      /* --------------------------
+       Responsive
+    --------------------------- */
+      @media (max-width: 880px) {
+        .hero {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 30px;
+        }
+        .hero-text h1 {
+          font-size: 32px;
+        }
+        
+        .navbar {
+          flex-direction: column;
+          padding: 15px 0;
+        }
+        .logo-sekolah {
+          margin-bottom: 15px;
+        }
+        nav {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        nav a {
+          margin: 5px 10px;
+        }
+      }
+      
+      @media (max-width: 600px) {
+        section {
+          padding: 60px 0;
+        }
+        section h2 {
+          font-size: 28px;
+        }
+        .services,
+        .teachers,
+        .testimonials {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <div class="logo-sekolah">
+            <img src="Logo.jpg" alt="Banner pelayanan catering yang menampilkan seorang pegawai memakai seragam abu-abu tersenyum" class="rounded shadow-md w-full" onerror="this.style.display='none'" />
+            SDN 1 SIDOMUNCUL
+          </div>
+          <nav>
+            <a href="#about">Tentang</a>
+            <a href="#fasilitas">Fasilitas</a>
+            <a href="#teachers">Tenaga Pengajar</a>
+            <a href="#testimonials">Testimoni</a>
+            <a href="#contact" class="btn">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="container" id="about">
+      <div class="hero">
+        <div class="hero-text">
+          <h1>Selamat Datang di Sekolah Kami</h1>
+          <p>
+            Sekolah SDN 1 Sidomuncul berkomitmen memberikan pendidikan terbaik dengan
+            kurikulum modern dan lingkungan belajar yang inspiratif.
+          </p>
+          <a href="#contact" class="btn">Hubungi Kami</a>
+        </div>
+        <div>
+          <img 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTtpSsPd56zRjJoW6QahRboLYuazCYuEXWfA&s" 
+            alt="Sekolah SDN 1 Sidomuncul" 
+            class="hero-image" 
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- fasilitas -->
+    <section id="fasilitas">
+      <div class="container">
+        <h2>Fasilitas</h2>
+        <p class="subtitle">
+          Kami menyediakan berbagai fasilitas untuk segala kebutuhan belajar siswa.
+        </p>
+
+        <div class="services">
+          <div class="service">
+            <img src="https://soloabadi.com/wp-content/uploads/2022/11/ruang-laboratorium-yang-ergonomis.jpg" />
+            <h3>Ruang Laboratorium</h3>
+            <p>Digunakan untuk praktek secara langsung siswa dalam berbagai mata pelajaran sains.</p>
+          </div>
+          <div class="service">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK4a--bWpZQ4ppdQu4eqOCuLjog8yNDWDsFg&s" />
+            <h3>Ruang Kelas</h3>
+            <p>Tempat dimana siswa-siswa belajar dengan nyaman dan kondusif.</p>
+          </div>
+          <div class="service">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvyxro4Kl9Mi4wiOZDtsiBBm4AGqf6W4I_wA&s" />
+            <h3>Mushola</h3>
+            <p>Digunakan untuk kegiatan keagamaan dan ibadah siswa.</p>
+          </div>
+          <div class="service">
+            <img src="https://lh5.googleusercontent.com/proxy/Pxe4DHdukUECTv59rL46VgPSjwDTWwPT5AFpcEy2qebHPnVAbbUNmLr-qJWh-TGqK48QkIQvI68JY7ch55SRVbmGVZvRweGjd-NyOE-LRkSvB3c8xpG_yfFCUvA6HbGhULnEO07gh4rbT5aNgkJXgw5u7e0GBMr5thVG1oE-9MR_d4SP" />
+            <h3>Kantor Guru</h3>
+            <p>Tempat untuk guru berkoordinasi dan mempersiapkan materi pembelajaran.</p>
+          </div>
+          <div class="service">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPAWjdA5rHFqhA6m1BeQxmAsM-pV2WkPFdSA&s" />
+            <h3>Lab Komputer</h3>
+            <p>Belajar para siswa untuk memperdalam bidang digital dan teknologi informasi.</p>
+          </div>
+          <div class="service">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDMBNZLuiQENfVXDAhhBV1y5S9V8R7RICZNf9DgLn770W5HdACfWneq0jeihFpHuDp7E9vY_7f5w1X6Xzw6x5q-GeqkKcGQd_dzFItSlipCL--tadZXPMkJvaR7aSYF4WjGQF9N1NDgEX_LhpTg0cwhylZQan4zC68uSGXBka1txJMSCS3ErKVFyFBN-w/s857/Gambar%20contoh%20taman%20sekolah.jpg" />
+            <h3>Taman yang Luas</h3>
+            <p>Para siswa bisa bersantai dan berbincang dengan teman ketika istirahat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section id="testimonials">
+      <div class="container">
+        <h2>Testimoni Wali Murid</h2>
+        <p class="subtitle">Kata mereka tentang sekolah ini</p>
+
+        <div class="testimonials">
+          <div class="testi">
+            "Pelayanannya cepat, guru sangat ramah, dan ruangan bersih. Anak-anak
+            merasa sangat nyaman saat belajar." — <strong>Bapak Andi, Wali Murid</strong>
+          </div>
+          <div class="testi">
+            "Konsultasi online sangat membantu saya yang sibuk. Terima kasih
+            sekolah SDN 1 Sidomuncul" — <strong>Ibu Sari, Wali Murid</strong>
+          </div>
+          <div class="testi">
+            "Fasilitas lengkap dan guru-gurunya sangat berpengalaman. Anak saya 
+            semakin semangat belajar di sini." — <strong>Bapak Rudi, Wali Murid</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--tenaga pengajar-->
+    <section id="teachers">
+      <div class="container">
+        <h2>Tenaga Pengajar</h2>
+        <p class="subtitle">
+          Guru yang Profesional dan berpengalaman di bidangnya.
+        </p>
+
+        <div class="teachers">
+          <div class="teacher teacher-math">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkUymSzk-B56mmBRsMwsRNF8Xi6oz-sr_EMA&s" alt="Sejar" />
+            <span class="field">Sejarah</span>
+            <h3>Pak Sandi</h3>
+            <p>Guru Matematika</p>
+          </div>
+          <div class="teacher teacher-language">
+            <img src="Guru indonesia.jpg">
+            <span class="field">Bahasa</span>
+            <h3>Ibu. Khanin</h3>
+            <p>Guru Bahasa Indonesia</p>
+          </div>
+          <div class="teacher teacher-science">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd2yVsBdMYerlLCFInWE9dg6DWshO4BLMinw&s">
+            <span class="field">IPA</span>
+            <h3>Pak. Alfin</h3>
+            <p>Guru IPA</p>
+          </div>
+          <div class="teacher teacher-pe">
+            <img src= "guru olahraga.jpg">
+            <span class="field">Olahrag</span>
+            <h3>Pak. Agus</h3>
+            <p>Guru Olahraga</p>
+      </div>
+    </section>
+
+    <!-- Form Kontak -->
+    <section id="contact">
+      <div class="container">
+        <h2>Pendaftaran</h2>
+        <p class="subtitle">Isi formulir di bawah ini untuk informasi lebih lanjut.</p>
+
+        <form>
+          <input type="text" placeholder="Nama Lengkap" required />
+          <input type="email" placeholder="Email" required />
+          <input type="tel" placeholder="Nomor Telepon / WhatsApp" required />
+          <select required>
+            <option value="" disabled selected>Pilih Jenjang Pendidikan</option>
+            <option value="sd">Sekolah Dasar (SD)</option>
+          </select>
+          <textarea rows="4" placeholder="Pertanyaan atau Keluhan (opsional)"></textarea>
+          <button class="btn" type="submit">Kirim Permintaan</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>
+          SDN 1 Sidomuncul | Alamat: Jl. Ayo Sekolah No. 88, Konoha | Telepon: (021) 777-8899
+        </p>
+        <p>&copy; 2025 SDN 1 Sidomuncul . Semua Hak Dilindungi.</p>
+      </div>
+    </footer>
+
+    <!-- Script: set active menu saat diklik dan saat halaman dibuka dengan hash -->
+    <script>
+      (function () {
+        const links = document.querySelectorAll("nav a");
+        links.forEach((a) => {
+          a.addEventListener("click", () => {
+            links.forEach((x) => x.classList.remove("active"));
+            a.classList.add("active");
+          });
+        });
+        // tandai link sesuai hash saat load (jika user buka /#contact)
+        window.addEventListener("load", () => {
+          const cur = location.hash || "#about";
+          links.forEach((a) => {
+            if (a.getAttribute("href") === cur) a.classList.add("active");
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
